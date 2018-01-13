@@ -1,21 +1,21 @@
-.row > .column {
+.r > .c {
   padding: 0 8px;
 }
 
-.row:after {
+.r:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Create four equal columns that floats next to eachother */
-.column {
+/* Create four equal cs that floats n to eachother */
+.c {
   float: left;
   width: 25%;
 }
 
 /* The Modal (background) */
-.modal {
+.m{
   display: none;
   position: fixed;
   z-index: 1;
@@ -29,7 +29,7 @@
 }
 
 /* Modal Content */
-.modal-content {
+.mc {
   position: relative;
   background-color: #fefefe;
   margin: auto;
@@ -60,9 +60,9 @@
   display: none;
 }
 
-/* Next & previous buttons */
-.prev,
-.next {
+/* n & pious buttons */
+.p,
+.n {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -78,15 +78,15 @@
   -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
-.next {
+/* Position the "n button" to the right */
+.n {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
+.p:hover,
+.n:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -100,26 +100,26 @@
 }
 
 /* Caption text */
-.caption-container {
+.cc {
   text-align: center;
   background-color: black;
   padding: 2px 16px;
   color: white;
 }
 
-img.demo {
+img.d {
   opacity: 0.6;
 }
 
 .active,
-.demo:hover {
+.d:hover {
   opacity: 1;
 }
 
-img.hover-shadow {
+img.hs {
   transition: 0.3s
 }
 
-.hover-shadow:hover {
+.hs:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 }
