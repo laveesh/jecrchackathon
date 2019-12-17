@@ -1,247 +1,113 @@
-$( document ).ready(function(){
+$(document).ready(function() {
+  $('.dropdown-trigger').click(() => {
+    $('#dropdown1').css(
+      $('#dropdown1').css('display') == 'none'
+        ? {
+            opacity: 1,
+            display: 'block'
+          }
+        : {
+            opacity: 0,
+            display: 'none'
+          }
+    );
+  });
 
+  $('.button-collapse').sideNav();
 
+  $('.parallax').parallax();
 
-    $(".button-collapse").sideNav();
+  $('.carousel').carousel();
 
+  let animateTopBar = () => {
+    let offset = $(window).scrollTop();
 
+    let topNav = $('.top-nav');
 
-    $('.parallax').parallax();
+    if (offset > 0) {
+      topNav.addClass('scroll-color');
 
+      $('.top-nav').css('background', 'white');
+    } else {
+      topNav.removeClass('scroll-color');
 
-
-    $('.carousel').carousel();
-
-
-
-
-
-
-
-    let animateTopBar = () => {
-
-
-
-        let offset = $(window).scrollTop();
-
-
-
-        let topNav = $('.top-nav');
-
-
-
-        if (offset > 0) {
-
-
-
-            topNav.addClass("scroll-color");
-
-
-
-            $(".top-nav").css('background', 'white');
-
-
-
-        } else {
-
-
-
-            topNav.removeClass("scroll-color");
-
-
-
-            $(".top-nav").css('background', 'rgba(0, 0, 1, .2)');
-
-
-
-            }
-
-
-
+      $('.top-nav').css('background', 'rgba(0, 0, 1, .2)');
     }
+  };
 
+  animateTopBar();
 
+  $(window).scroll(animateTopBar);
 
+  // smooth scroll animations
 
+  $('a:not(.no-scroll)').click(function(e) {
+    if (this.hash !== '') {
+      e.preventDefault();
 
+      let hash = this.hash;
 
-
-    animateTopBar();
-
-
-
-    $(window).scroll(animateTopBar);
-
-
-
-
-
-
-
-    // smooth scroll animations
-
-
-
-    $("a:not(.no-scroll)").click(function (e) {
-
-
-
-        if (this.hash !== "") {
-
-
-
-            e.preventDefault();
-
-
-
-            let hash = this.hash;
-
-
-
-            $('html, body').animate({
-
-
-
-                scrollTop: $(hash).offset().top
-
-
-
-            }, 800, () => {
-
-
-
-                window.location.hash = hash;
-
-
-
-            });
-
-
-
+      $('html, body').animate(
+        {
+          scrollTop: $(hash).offset().top
+        },
+        800,
+        () => {
+          window.location.hash = hash;
         }
+      );
+    }
+  });
 
+  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 
+  // particlesJS.load('particle', '/client/styles/particles.json', function() {
 
-    });
+  //   console.log('callback - particles.js config loaded');
 
+  // });
 
+  $('.box').hide();
 
-    /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+  //$('.cross').hide();
 
+  $('.add').show();
 
+  // Make sure all the elements with a class of "clickme" are visible and bound
 
-// particlesJS.load('particle', '/client/styles/particles.json', function() {
+  // with a click event to toggle the "box" state
 
-
-
-//   console.log('callback - particles.js config loaded');
-
-
-
-// });
-
-
-
-
-
-
-
-
-
-
-
-$('.box').hide();
-
-
-
-//$('.cross').hide();
-
-
-
-$('.add').show();
-
-
-
-
-
-
-
-// Make sure all the elements with a class of "clickme" are visible and bound
-
-
-
-// with a click event to toggle the "box" state
-
-
-
-$('.clickme').each(function() {
-
-
-
-    $(this).show(0).on('click', function(e) {
-
-
-
+  $('.clickme').each(function() {
+    $(this)
+      .show(0)
+      .on('click', function(e) {
         // This is only needed if your using an anchor to target the "box" elements
-
-
 
         e.preventDefault();
 
-
-
-
-
-
-
         // Find the next "box" element in the DOM
 
+        $(this)
+          .next('.box')
+          .slideToggle('fast');
 
+        if (
+          $(this)
+            .find('i')
+            .text() == 'add_circle'
+        ) {
+          $(this)
+            .find('i')
+            .text('cancel');
+        } else {
+          $(this)
+            .find('i')
+            .text('add_circle');
+        }
+      });
+  });
 
-        $(this).next('.box').slideToggle('fast');
-
-
-
-        if ($(this).find('i').text() == 'add_circle'){
-
-
-
-        $(this).find('i').text('cancel');
-
-
-
-    } else {
-
-
-
-        $(this).find('i').text('add_circle');
-
-
-
-    }
-
-
-
-});
-
-
-
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
+  /*
 $(".my-btn-front-1").click(function (e) {
 
 
@@ -621,97 +487,34 @@ $(".my-btn-front-12").click(function (e) {
 });
 */
 
+  $('.my-btn-back').click(function(e) {
+    $('.my-back').css('transform', 'rotateY(180deg)');
 
+    $('.my-front').css('transform', 'rotateY(0)');
 
+    $('.my-btn-back').css('display', 'none');
+  });
 
+  // When the user clicks on the button, open the modal
 
+  document.getElementById('t-c').onclick = function() {
+    document.getElementById('container-t-c').style.display = 'block';
+  };
 
-$(".my-btn-back").click(function (e) {
+  // When the user clicks on <span> (x), close the modal
 
+  document.getElementsByClassName('t-c-close')[0].onclick = function() {
+    document.getElementById('container-t-c').style.display = 'none';
+  };
 
+  // When the user clicks anywhere outside of the modal, close it
 
-    $(".my-back").css('transform' , 'rotateY(180deg)');
-
-
-
-    $(".my-front").css('transform' , 'rotateY(0)');
-
-
-
-    $('.my-btn-back').css('display' , 'none');
-
-
-
-});
-
-
-
-
-
-
-
-// When the user clicks on the button, open the modal 
-
-
-
-document.getElementById("t-c").onclick = function() {
-
-
-
-    document.getElementById('container-t-c').style.display = "block";
-
-
-
-    };
-
-
-
-
-
-
-
-// When the user clicks on <span> (x), close the modal
-
-
-
-    document.getElementsByClassName("t-c-close")[0].onclick = function() {
-
-
-
-    document.getElementById('container-t-c').style.display = "none";
-
-
-
-};
-
-
-
-
-
-
-
-// When the user clicks anywhere outside of the modal, close it
-
-
-
-window.onclick = function(event) {
-
-
-
+  window.onclick = function(event) {
     if (event.target == document.getElementById('container-t-c')) {
-
-
-
-        document.getElementById('container-t-c').style.display = "none";
-
-
-
-   };
-
-
-
-};
-/*
+      document.getElementById('container-t-c').style.display = 'none';
+    }
+  };
+  /*
 function popup(container,button,closing){
 var modal1 = document.getElementById(container);
 
@@ -904,77 +707,60 @@ var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
 
 initializeClock("clockdiv", deadline);*/
 
+  /*Time Circle*/
 
+  $('.example').TimeCircles({
+    animation: 'smooth',
+    circle_bg_color: '#000000',
+    fg_width: 0.05,
+    bg_width: 0.5,
+    direction: 'Clockwise'
+  });
 
-
-
-
-
-/*Time Circle*/
-
-
-
-$(".example").TimeCircles({animation: "smooth",circle_bg_color: "#000000",fg_width: 0.05 ,bg_width: 0.5 ,direction: "Clockwise"});
-
-
-
-
-
-
-
-$(window).resize(function(){
-
-
-
-    $("#timer").TimeCircles().rebuild();
-
-
-
+  $(window).resize(function() {
+    $('#timer')
+      .TimeCircles()
+      .rebuild();
+  });
 });
-
-
-
-
-
-
-
-});
-
-
 
 function openModal() {
-  document.getElementById('myModal').style.display = "block";
+  document.getElementById('myModal').style.display = 'block';
 }
 
 function closeModal() {
-  document.getElementById('myModal').style.display = "none";
+  document.getElementById('myModal').style.display = 'none';
 }
 
 var slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  showSlides((slideIndex += n));
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  showSlides((slideIndex = n));
 }
 
 function showSlides(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  var slides = document.getElementsByClassName('mySlides');
+  var dots = document.getElementsByClassName('demo');
+  var captionText = document.getElementById('caption');
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    slides[i].style.display = 'none';
   }
   for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(' active', '');
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].className += ' active';
+  captionText.innerHTML = dots[slideIndex - 1].alt;
 }
