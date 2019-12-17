@@ -163,7 +163,7 @@ nav .nav-links {
 
 nav .register-btn {
     margin: 20px;
-    background: #2ed7f8;
+    background: #f8b32e;
 }
 
 nav ul li a {
@@ -187,7 +187,7 @@ nav ul li a:hover {
 }
 
 .scroll-color ul li a:hover {
-    color: #2ed7f8;
+    color: #f8b32e;
     background: rgba(0, 0, 0, 0.01);
 }
 .f-anim-jecrc{
@@ -498,7 +498,7 @@ h1{
 #clockdiv > div{
 	padding: 50px;
 	border-radius: 30px;
-	background: #2ED7f8;
+	background: #f8b32e;
     display: inline-block;
     text-align: center;
     margin-right: 40px
@@ -566,7 +566,7 @@ h1{
 .head-line {
     width: 40px;
     height: 2px;
-    background-color: #2ed7f8;
+    background-color: #f8b32e;
 }
 
 .about-bold {
@@ -846,7 +846,7 @@ h1{
     width: 100%;
     margin: 6px auto;
     text-align: center;
-    background-color: #2ed7f8;
+    background-color: #f8b32e;
     color: #fff;
     margin-top: 50px;
 }

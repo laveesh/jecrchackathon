@@ -1,11 +1,6 @@
 @font-face {
-    font-family: 'EngraversGothic BT';
-    src: url('../../EngraversGothicBT.ttf');
-}
-
-@font-face {
-    font-family: 'EngraversGothic BT';
-    src: url('../../Engravers.woff');
+    font-family: 'Inria Serif';
+    src: url('../../InriaSerif-Regular.ttf');
 }
 
 .landing-section {
@@ -314,7 +309,7 @@ nav .nav-links {
 
 nav .register-btn {
     margin: 20px;
-    background: #2ed7f8;
+    background: #f8b32e;
 }
 
 nav ul li a {
@@ -338,7 +333,7 @@ nav ul li a:hover {
 }
 
 .scroll-color ul li a:hover {
-    color: #2ed7f8;
+    color: #f8b32e;
     background: rgba(0, 0, 0, 0.01);
 }
 
@@ -649,7 +644,7 @@ h1{
 #clockdiv > div{
 	padding: 50px;
 	border-radius: 30px;
-	background: #2ED7f8;
+	background: #f8b32e;
     display: inline-block;
     text-align: center;
     margin-right: 40px
@@ -719,17 +714,17 @@ h1{
 .head-line {
     width: 40px;
     height: 2px;
-    background-color: #2ed7f8;
+    background-color: #f8b32e;
 }
 
 .about-bold {
     font-weight: bolder;
-    font-size: 15px;
-    color: #ffffff;
-    background-color: rgb(46, 215, 248);
+    font-size: 19px;
+    color: #f8b32e;
+    /* background-color: rgb(46, 215, 248);
     padding: 2px 20px;
     border-radius: 30px;
-    margin: 0 10px;
+    margin: 0 10px; */
 }
 
 
@@ -1027,7 +1022,7 @@ h1{
     width: 80%;
     margin: 6px auto;
     text-align: center;
-    background-color: #2ed7f8;
+    background-color: #f8b32e;
     color: #fff;
     margin-top: 50px;
     border-radius: 20px;
@@ -1423,7 +1418,7 @@ footer {
 }
 
 * {
-    font-family: 'EngraversGothic BT', Arial, 'sans serif';
+    font-family: 'Inria Serif', Arial, 'sans serif';
 }
 
 .textjust {
