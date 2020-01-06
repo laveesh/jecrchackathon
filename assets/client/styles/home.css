@@ -1216,7 +1216,7 @@ h1{
 
 .tech-slideshow>div {
     height: 250px;
-    width: 5000px;
+    width: 11000px;
     background: url(image1.png);
     position: absolute;
     top: 0;
@@ -1226,14 +1226,14 @@ h1{
 }
 
 .tech-slideshow .mover-1 {
-    animation: moveSlideshow 15s linear infinite;
+    animation: moveSlideshow 30s linear infinite;
 }
 
 .tech-slideshow .mover-2 {
     opacity: 0;
     transition: opacity 0.5s ease-out;
     background-position: 0 -250px;
-    animation: moveSlideshow 18s linear infinite;
+    animation: moveSlideshow 30s linear infinite;
 }
 
 .tech-slideshow:hover .mover-2 {
